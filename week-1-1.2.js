@@ -51,12 +51,36 @@ function print_0_to_1000(number){
 
 //Array
 
-let numbers = [1,2,3,4,5,6,7,8,9]
+// let numbers = [1,2,3,4,5,6,7,8,9]
 
 // for (let i = 0; i<numbers.length; i++){
 //     console.log(numbers[i]);
 // }
 
-let update_numbers = numbers.map((num) =>{return num ** 2});
+// let update_numbers = numbers.map((num) =>{return num ** 2});
 
-console.log(update_numbers)
+// console.log(update_numbers)
+
+function even_numbers(numbers){
+    for (let i = 0; i<numbers.length; i++){
+        if(numbers[i] % 2 == 0){
+            console.log(numbers[i]);
+        }
+    }
+}
+
+function biggest_number_in_array(numbers){
+    if(numbers){
+        let max = numbers[0];
+
+        for(let i = 0; i<numbers.length; i++){
+            if(max < numbers[i]){
+                max = numbers[i];
+            }
+        }
+        console.log(`Bigest number in array ${numbers} : ${max}`);
+    }
+}
+
+// even_numbers([21, 23, 65, 12, 87, 55, 88])
+// biggest_number_in_array([21, 23, 65, 12, 87, 55, 88]);
