@@ -165,3 +165,12 @@ function greet1(){
 //setInterval
 
 // setInterval(greet1, 1000);
+
+//counter to count from 30 to 0
+
+function counter(){
+    for(let i = 30; i >= 0; i--){
+        console.log(i);
+    }
+}
+// counter();
