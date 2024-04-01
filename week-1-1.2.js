@@ -47,4 +47,16 @@ function print_0_to_1000(number){
     }
 }
 
-print_0_to_1000(1001);
+//print_0_to_1000(1001);
+
+//Array
+
+let numbers = [1,2,3,4,5,6,7,8,9]
+
+// for (let i = 0; i<numbers.length; i++){
+//     console.log(numbers[i]);
+// }
+
+let update_numbers = numbers.map((num) =>{return num ** 2});
+
+console.log(update_numbers)
