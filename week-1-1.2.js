@@ -117,3 +117,17 @@ function print_complex_object_data(Users){
 }
 
 //print_complex_object_data(Users);
+
+//reverse elements of an array
+
+let array1 = [3, 45, 0, -2, -45, 34, 1, 9, 6];
+function reverse_array(numbers){
+    let reversed = [];
+    console.log(numbers.length);
+    for(let i = numbers.length - 1; i>=0; i--){
+        reversed.push(numbers[i]);
+    }
+    console.log(reversed);
+}
+// reverse_array(array1);
+
