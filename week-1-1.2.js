@@ -154,3 +154,10 @@ function using_callback(a, b, fn){
 
 // console.log(using_callback(15,41, sub));
 
+//SetTimeout
+
+function greet1(){
+    console.log('Hello, Martian...');
+}
+
+setTimeout(greet1, 3000);
