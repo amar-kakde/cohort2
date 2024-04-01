@@ -160,4 +160,8 @@ function greet1(){
     console.log('Hello, Martian...');
 }
 
-setTimeout(greet1, 3000);
+// setTimeout(greet1, 3000);
+
+//setInterval
+
+// setInterval(greet1, 1000);
