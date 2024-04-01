@@ -84,3 +84,36 @@ function biggest_number_in_array(numbers){
 
 // even_numbers([21, 23, 65, 12, 87, 55, 88])
 // biggest_number_in_array([21, 23, 65, 12, 87, 55, 88]);
+
+Users = [
+    {
+        name:'ankush mule',
+        age:25,
+        gender:'male'
+    },
+    {
+        name:'ankita dhingra',
+        age:25,
+        gender:'female'
+    },
+    {
+        name:'arun pawar',
+        age:20,
+        gender:'male'
+    },
+    {
+        name:'alice wonderland',
+        age:29,
+        gender:'female'
+    },
+]
+
+function print_complex_object_data(Users){
+    for (let i = 0; i<Users.length; i++){
+        if(Users[i].gender == 'female'){
+            console.log(Users[i]);
+        }
+    }
+}
+
+//print_complex_object_data(Users);
