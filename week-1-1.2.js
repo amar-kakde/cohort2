@@ -174,3 +174,14 @@ function counter(){
     }
 }
 // counter();
+
+const d1 = new Date();
+function Sample(){
+    const d2 = new Date();
+    const t2 = d2.getTime();
+    const t = t2 - t1;
+    console.log(`time to execute : ${t}`);
+}
+
+const t1 = d1.getTime();
+setTimeout(Sample, 1000);
