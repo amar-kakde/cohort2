@@ -183,5 +183,17 @@ function Sample(){
     console.log(`time to execute : ${t}`);
 }
 
-const t1 = d1.getTime();
-setTimeout(Sample, 1000);
+// const t1 = d1.getTime();
+// setTimeout(Sample, 1000);
+
+function show_time(){
+    console.clear();
+    const d = new Date();
+    const HH = d.getHours();
+    const MM = d.getMinutes();
+    const SS = d.getSeconds();
+
+    console.log(`${HH}:${MM}:${SS}`);
+}
+
+// setInterval(show_time, 1000);
