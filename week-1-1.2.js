@@ -131,3 +131,26 @@ function reverse_array(numbers){
 }
 // reverse_array(array1);
 
+
+//callback function
+
+function sum(a, b){
+    return a + b;
+}
+
+function sub(a,b){
+    return a - b;
+}
+
+function result(a, b){
+    return sum(a, b);
+}
+
+// console.log(result(15,41));
+
+function using_callback(a, b, fn){
+    return fn(a, b);
+}
+
+// console.log(using_callback(15,41, sub));
+
