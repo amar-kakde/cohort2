@@ -100,3 +100,24 @@ function promise_resolved() {
 		console.log(values);
 	});
 }
+
+//Promise.race
+
+function promise_race_child1() {
+	return fetch("https://dummyjson.com/quotes")
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data.response);
+			return data;
+		});
+}
+
+function promise_race_child2() {
+	return setTimeout(() => {
+		console.log("setTimeout Function.");
+	}, 5000);
+}
+
+Promise.race([promise_race_child1, promise_race_child2]).then((value) => {
+	console.log(value);
+});
