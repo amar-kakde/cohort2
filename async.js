@@ -67,10 +67,36 @@ function errorPromise() {
 	});
 }
 
-errorPromise()
-	.then((data) => {
+// errorPromise()
+// 	.then((data) => {
+// 		console.log(data);
+// 	})
+// 	.catch(function (e) {
+// 		console.log(e);
+// 	});
+
+// Write a function that takes an array of URLs and fetches data from each URL using fetch.
+// Use Promise.all to wait for all requests to complete and then log the responses
+
+function promise1() {
+	fetch("https://dummyjson.com/carts").then((data) => {
 		console.log(data);
-	})
-	.catch(function (e) {
-		console.log(e);
 	});
+}
+function promise2() {
+	fetch("https://dummyjson.com/products").then((data) => {
+		console.log(data);
+	});
+}
+
+function promise3() {
+	fetch("https://dummyjson.com/quotes").then((data) => {
+		console.log(data);
+	});
+}
+
+function promise_resolved() {
+	Promise.all([promise1(), promise2(), promise3()]).then((values) => {
+		console.log(values);
+	});
+}
