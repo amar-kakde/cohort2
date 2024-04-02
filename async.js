@@ -118,6 +118,18 @@ function promise_race_child2() {
 	}, 5000);
 }
 
-Promise.race([promise_race_child1, promise_race_child2]).then((value) => {
-	console.log(value);
-});
+// Promise.race([promise_race_child1, promise_race_child2]).then((value) => {
+// 	console.log(value);
+// });
+
+//async await
+
+function read_data() {
+	setTimeout(async () => {
+		const response = await fetch("https://dummyjson.com/quotes");
+		const data = await response.json();
+		console.log(data);
+	}, 3000);
+}
+
+//read_data();
