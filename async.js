@@ -1,5 +1,7 @@
 //write a function that returns promise
 
+const e = require("express");
+
 function returnsPromise() {
 	return new Promise(function (resolve) {
 		setTimeout(function () {
@@ -44,8 +46,31 @@ function processData(data) {
 	});
 }
 
-fetchData().then((data) => {
+/* fetchData().then((data) => {
 	processData(data).then(() => {
 		console.log(data);
 	});
 });
+
+*/
+
+// Promise Error handling
+function errorPromise() {
+	return new Promise((resolve, reject) => {
+		if (false) {
+			setTimeout(() => {
+				resolve("resolved");
+			}, 3000);
+		} else {
+			reject("Error occured.");
+		}
+	});
+}
+
+errorPromise()
+	.then((data) => {
+		console.log(data);
+	})
+	.catch(function (e) {
+		console.log(e);
+	});
