@@ -4,15 +4,44 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Dom Exercise</title>
-		<script>
-			window.onload = () => {
-				const heading = document.createElement("h1");
-				const headingText = document.createTextNode("Big Head!");
-				heading.appendChild(headingText);
-				document.body.appendChild(heading);
-			};
-		</script>
+		<script></script>
 	</head>
-
 	<body></body>
+	<!--
+		Harkirat Dom Manipulation
+	-->
+	<input type="number" id="1st" placeholder="first number" class="1stclass" />
+	<br />
+	<input
+		type="number"
+		id="2nd"
+		placeholder="second number"
+		class="2ndclass"
+	/>
+	<br />
+	<button onclick="get_result_from_backend()">Calculcate Sum</button>
+	<div id="answer"></div>
+	<script>
+		function sumOfTwoNumbers() {
+			const x = document.getElementById("1st").value;
+			const y = document.getElementById("2nd").value;
+
+			const answer = parseInt(x) + parseInt(y);
+			document.getElementById("answer").innerHTML = answer;
+		}
+
+		function get_result_from_backend() {
+			const x = document.getElementById("1st").value;
+			const y = document.getElementById("2nd").value;
+
+			fetch(`http://localhost:3000/calculatesum?a=${x}&b=${y}`).then(
+				function (respose) {
+					console.log(respose);
+					respose.text().then(function (ans) {
+						document.getElementById("answer").innerHTML = ans;
+					});
+				}
+			);
+		}
+	</script>
 </html>
