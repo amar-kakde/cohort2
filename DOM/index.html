@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dom Exercise</title>
+		<script></script>
+	</head>
+	<body></body>
+	<!--
+		Harkirat Dom Manipulation
+	-->
+	<input
+		type="number"
+		oninput="get_result_from_backend()"
+		id="1st"
+		placeholder="first number"
+		class="1stclass"
+	/>
+	<br />
+	<input
+		type="number"
+		oninput="get_result_from_backend()"
+		id="2nd"
+		placeholder="second number"
+		class="2ndclass"
+	/>
+	<br />
+	<button oninput="get_result_from_backend()">Calculcate Sum</button>
+	<div id="answer"></div>
+	<script>
+		function sumOfTwoNumbers() {
+			const x = document.getElementById("1st").value;
+			const y = document.getElementById("2nd").value;
+
+			const answer = parseInt(x) + parseInt(y);
+			document.getElementById("answer").innerHTML = answer;
+		}
+
+		let timeout;
+		function debouncePopulateDiv() {
+			clearTimeout(timeout);
+
+			timeout = setTimeout(() => {
+				get_result_from_backend();
+			}, 100);
+		}
+
+		function get_result_from_backend() {
+			const x = document.getElementById("1st").value;
+			const y = document.getElementById("2nd").value;
+
+			fetch(`http://localhost:3000/calculatesum?a=${x}&b=${y}`).then(
+				function (respose) {
+					console.log(respose);
+					respose.text().then(function (ans) {
+						document.getElementById("answer").innerHTML = ans;
+					});
+				}
+			);
+		}
+	</script>
+</html>
