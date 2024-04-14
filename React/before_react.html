@@ -16,11 +16,11 @@
 				const t = document.getElementById("title").value;
 				const d = document.getElementById("description").value;
 
-				const title = document.createElement("h2");
+				const title = document.createElement("div");
 				const titleText = document.createTextNode(t);
 				title.appendChild(titleText);
 
-				const description = document.createElement("h2");
+				const description = document.createElement("div");
 				const descriptionText = document.createTextNode(t);
 				description.appendChild(descriptionText);
 
@@ -29,10 +29,12 @@
 				markAsDone.setAttribute("onClick", `myfun(${getId++})`);
 				markAsDone.innerHTML = "Mark as Done";
 
-				const Div = document.getElementById("container");
-				Div.appendChild(title);
-				Div.appendChild(description);
-				Div.appendChild(markAsDone);
+				const newDiv = document.createElement("div");
+				newDiv.appendChild(description);
+				newDiv.appendChild(title);
+				newDiv.appendChild(markAsDone);
+
+				document.getElementById("container").appendChild(newDiv);
 			}
 		</script>
 	</head>
