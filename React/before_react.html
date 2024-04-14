@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Before React Todo</title>
+		<script>
+			let getId = 1;
+
+			function myfun(id) {
+				const element = document.getElementById(id);
+				element.innerHTML = "Done";
+			}
+
+			function AddTodo() {
+				const t = document.getElementById("title").value;
+				const d = document.getElementById("description").value;
+
+				const title = document.createElement("h2");
+				const titleText = document.createTextNode(t);
+				title.appendChild(titleText);
+
+				const description = document.createElement("h2");
+				const descriptionText = document.createTextNode(t);
+				description.appendChild(descriptionText);
+
+				const markAsDone = document.createElement("button");
+				markAsDone.setAttribute("id", `${getId}`);
+				markAsDone.setAttribute("onClick", `myfun(${getId++})`);
+				markAsDone.innerHTML = "Mark as Done";
+
+				const Div = document.getElementById("container");
+				Div.appendChild(title);
+				Div.appendChild(description);
+				Div.appendChild(markAsDone);
+			}
+		</script>
+	</head>
+	<body>
+		<input id="title" placeholder="title" />
+		<br />
+		<input id="description" placeholder="description" />
+		<br />
+		<button id="addTodoButton" onclick="AddTodo()">Add Todo</button>
+		<br />
+		<div id="container"></div>
+	</body>
+</html>
