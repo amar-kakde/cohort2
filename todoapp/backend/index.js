@@ -4,7 +4,15 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", function (req, res) {
+app.get("/todos", function (req, res) {
+	//
+});
+
+app.post("/todo", function (req, res) {
+	//
+});
+
+app.post("/completed", function (req, res) {
 	//
 });
 
