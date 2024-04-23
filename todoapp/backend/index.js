@@ -1,10 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const { createTodo, updateTodo } = require("./types.js");
 const { todo } = require("./db.js");
 const port = 3000;
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/todos", async function (req, res) {
 	//
